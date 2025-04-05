@@ -42,6 +42,9 @@ async function main() {
   const button = document.getElementById('btn');
   const spanRu = document.getElementById('ru');
   const spanEn = document.getElementById('en');
+  const github = document.getElementById('github');
+  const project = document.getElementById('project');
+  const site = document.getElementById('site');
 
   loading.innerText = json.loading
   spanEn.className =  lang === 'en' ? 'active' : ''
@@ -54,6 +57,10 @@ async function main() {
   spanEn.innerText = json.en
   label_resp.innerText = json.result
   button.innerText = json.copy
+  github.innerText = json.github
+  project.innerText = json.project
+  site.innerText = json.site
+
 }
 
 main()

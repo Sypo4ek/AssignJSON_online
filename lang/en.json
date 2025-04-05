@@ -3,10 +3,13 @@
     "desc": "Assign 2 json into the main",
     "ru": "Русский",
     "en": "English",
+    "github": "Github page",
+    "project": "This github project",
+    "site": "My site",
     "field_1": "Main json",
     "field_2": "Added json",
     "result": "Result json:",
     "copy": "Copy json",
     "add": "Insert or select a file",
-    "loading":"Loading..."
+    "loading": "Loading..."
 }

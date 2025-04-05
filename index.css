@@ -59,19 +59,45 @@ body{
   button{
     background-color: white;
     outline: none;
-    border: 1px solid #000000;
-    padding: 0.5rem;
+    border: 1px solid #e3e3e3;
+    padding: 0.5rem 1rem;
     border-radius: 1.5rem;
     cursor: pointer;
   }
-  #lang{
+
+  button:hover{
+    background-color: rgb(247, 247, 247);
+    border-color: #cfcfcf;
+  }
+
+  #info{
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     z-index: 0;
-    top: 2rem;
+    gap: 0.25rem;
+    top: 1.5rem;
     right: 2rem;
   }
+  #info a {
+    margin: 0.25rem 0;
+    text-decoration: none;
+    color: #24bbd9;
+  }
+  #info a:hover {
+    margin: 0.25rem 0;
+    text-decoration: none;
+    color: #24bbd9af;
+  }
+  #info span:first-child {
+    margin-right: 0.2rem;
+  }
+  #info span:last-child {
+    margin-left: 0.2rem;
+  }
   span.active{
-    color: #24bbd9
+    color: #d95d24
   }
   #loading{
     height: 100vh;
@@ -109,7 +135,7 @@ body{
     .header{
       flex-direction: row;
     }
-    #lang{
+    #info{
       position: relative;
       top: auto;
       left: auto;
