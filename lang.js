@@ -8,19 +8,25 @@ function setLangToStore(value) {
   localStorage.setItem('lang', value)
 }
 
+async function setLoadingPage(func) {
+  document.getElementById('loading').className = 'active'
+  await func()
+  setTimeout(()=> {document.getElementById('loading').className = ''}, 500)
+}
+
+
 async function getJSON () {
   const lang = await getLangFromStore()
   if(sessionStorage.getItem(lang)) {
     return JSON.parse(sessionStorage.getItem(lang))
   }
-  const resp = await fetch(`./lang/${lang}.json`).then(resp => resp.json())
-  sessionStorage.setItem(lang, JSON.stringify(resp))
-  return resp
-}
+  let resp;
+  await setLoadingPage(async () => {
+    resp = await fetch(`./lang/${lang}.json`).then(resp => resp.json())
+    sessionStorage.setItem(lang, JSON.stringify(resp))
+  })
 
-async function loadingPageData() {
-    document.getElementById('loading').className = 'active'
-    setTimeout(()=> {document.getElementById('loading').className = ''}, 800)
+  return resp
 }
 
 async function main() {
@@ -38,8 +44,6 @@ async function main() {
   const spanEn = document.getElementById('en');
 
   loading.innerText = json.loading
-  loadingPageData()
-
   spanEn.className =  lang === 'en' ? 'active' : ''
   spanRu.className = lang === 'ru' ? 'active' : ''
   label_one.innerText = json.field_1

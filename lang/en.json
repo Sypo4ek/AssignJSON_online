@@ -1,12 +1,12 @@
 {
-    "title": "JSON combiner",
-    "desc": "Combines 2 files with json type data",
+    "title": "Assign JSON ",
+    "desc": "Assign 2 json into the main",
     "ru": "Русский",
     "en": "English",
-    "field_1": "Main object/file",
-    "field_2": "Added object/file",
-    "result": "Result:",
-    "copy": "Copy",
+    "field_1": "Main json",
+    "field_2": "Added json",
+    "result": "Result json:",
+    "copy": "Copy json",
     "add": "Insert or select a file",
     "loading":"Loading..."
 }
